@@ -43,6 +43,7 @@ const BurgerBuilder = () => {
         ingredientAdded={addIngredientHandler}
         ingredientMinus={minusIngredientHandler}
         disabled={disabledInfo}
+        price={priceState}
       />
     </Aux>
   )
