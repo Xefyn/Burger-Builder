@@ -65,9 +65,13 @@ const BurgerBuilder = () => {
       updatePurchaseState();
     }
   };
+
+  const purchasingHandler = () => {
+    setShowModalState(!showModalState)
+  }
   return (
     <Aux>
-      <Modal show={showModalState}>
+      <Modal show={showModalState} clicked={purchasingHandler}>
         <OrderSummary
           ingredient={ingredientState}
         />
@@ -79,7 +83,7 @@ const BurgerBuilder = () => {
         disabled={disabledInfo}
         price={priceState}
         purchasable={purchasableState}
-        purchasing={() => setShowModalState(!showModalState)}
+        purchasing={purchasingHandler}
       />
     </Aux>
   );
