@@ -69,11 +69,18 @@ const BurgerBuilder = () => {
   const purchasingHandler = () => {
     setShowModalState(!showModalState)
   }
+
+  const purchaseContinueHandler = () => {
+    alert("You continue!");
+  }
   return (
     <Aux>
       <Modal show={showModalState} clicked={purchasingHandler}>
         <OrderSummary
+          cancelHandler={purchasingHandler}
+          continueHandler={purchaseContinueHandler}
           ingredient={ingredientState}
+          price={priceState}
         />
       </Modal>
       <Burger ingredients={ingredientState} />
